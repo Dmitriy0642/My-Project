@@ -7,8 +7,8 @@ import styles from "../components/swetShirt.module.css";
 import axios from "axios";
 
 const SwetShirt = () => {
-  const [cat, setCat] = useState([]);
-  const [catalog, setCatalog] = useState([]);
+  const [cat, setCat] = useState(null);
+  const [catalog, setCatalog] = useState(null);
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`${config.ApiEndPOint}` + ".json");
@@ -35,7 +35,9 @@ const SwetShirt = () => {
     }
   });
 
-  return (
+  return cat === null && catalog === null ? (
+    <h2>Loading</h2>
+  ) : (
     <div>
       <Header />
       <div className={styles.second_block}>
@@ -49,7 +51,9 @@ const SwetShirt = () => {
             <Link to={`/swetshirt/${item._id}`}>
               <img src={item.img[0]} alt="" className={styles.img} />
             </Link>
-            <h2 className={styles.title}>{item.name}</h2>
+            <Link to={`/swetshirt/${item._id}`}>
+              <h2 className={styles.title}>{item.name}</h2>
+            </Link>
           </div>
         ))}
       </div>

@@ -130,12 +130,16 @@ legend {
 
 .main_div {
   margin: 50px 0 200px 0 0;
+  color: black;
+}
+
+.main_div :hover {
+  transition: 0.5s;
+  color: pink;
 }
 
 .title {
   margin: 0 40px 0 50px;
   font-family: "Roboto", sans-serif;
   font-size: 22px;
-}
-.img {
 }
