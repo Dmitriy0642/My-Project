@@ -139,8 +139,3 @@ legend {
 }
 .img {
 }
-
-.img :hover {
-  transition: 0.5s;
-  border: 2px solid black;
-}

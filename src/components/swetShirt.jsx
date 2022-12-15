@@ -46,7 +46,7 @@ const SwetShirt = () => {
             firm={item.firm}
             className={styles.main_div}
           >
-            <Link to={`/swetshirt${item._id}`}>
+            <Link to={`/swetshirt/${item._id}`}>
               <img src={item.img[0]} alt="" className={styles.img} />
             </Link>
             <h2 className={styles.title}>{item.name}</h2>
