@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import CatalogComponent from "../components/catalogComponent";
+import Header from "../components/ui/header";
+import Footer from "../components/ui/footer";
+import CatalogComponent from "../components/ui/catalogComponent";
 
 const MainPage = () => {
   return (

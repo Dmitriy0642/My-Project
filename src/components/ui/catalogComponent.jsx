@@ -1,11 +1,11 @@
 import React from "react";
-import logoSwetshirt from "../LogoCatalog/logoSwetshirt.jpg";
+import logoSwetshirt from "../../resources/LogoCatalog/logoSwetshirt.jpg";
 import { Link } from "react-router-dom";
-import styles from "../components/catalog.module.css";
-import logoShoes from "../LogoCatalog/logoShoes.jpg";
-import logoHoodies from "../LogoCatalog/logoHoodies.jpg";
-import logoSocks from "../LogoCatalog/LogoSocks.jpg";
-import logoTshirt from "../LogoCatalog/logoTshirt.jpg";
+import styles from "../styles.component/catalog.module.css";
+import logoShoes from "../../resources/LogoCatalog/logoShoes.jpg";
+import logoHoodies from "../../resources/LogoCatalog/logoHoodies.jpg";
+import logoSocks from "../../resources/LogoCatalog/LogoSocks.jpg";
+import logoTshirt from "../../resources/LogoCatalog/logoTshirt.jpg";
 
 const CatalogComponent = () => {
   return (

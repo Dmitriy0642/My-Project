@@ -1,7 +1,8 @@
 import React from "react";
 
-const ReviewSweatshorts = () => {
-  return <div></div>;
+const ReviewSweatshorts = ({ match }) => {
+  const postId = match.params.postId;
+  return <div>{postId}</div>;
 };
 
 export default ReviewSweatshorts;

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./ui/header";
+import Footer from "./ui/footer";
 import config from "../config.json";
-import styles from "../components/swetShirt.module.css";
+import styles from "../components/styles.component/swetShirt.module.css";
 import axios from "axios";
 
 const SwetShirt = () => {
@@ -27,7 +27,7 @@ const SwetShirt = () => {
     catalogArr.push(catalog[key]);
   }
 
-  const result = catalogArr.filter((catArr) => {
+  const res = catalogArr.filter((catArr) => {
     const cat = categoryArr.find((obj) => obj._id === catArr.category);
     if (cat !== undefined) {
       const cat_name = cat.name;
@@ -35,21 +35,34 @@ const SwetShirt = () => {
     }
   });
 
+  const handleClick = (event) => {
+    const id = event.target.id;
+    console.log(id);
+  };
+
   return cat === null && catalog === null ? (
     <h2>Loading</h2>
   ) : (
     <div>
       <Header />
       <div className={styles.second_block}>
-        {result.map((item) => (
+        {res.map((item) => (
           <div
             key={item._id}
             category={item.category}
             firm={item.firm}
             className={styles.main_div}
+            onClick={(e) => {
+              handleClick(e);
+            }}
           >
             <Link to={`/swetshirt/${item._id}`}>
-              <img src={item.img[0]} alt="" className={styles.img} />
+              <img
+                src={item.img[0]}
+                alt=""
+                className={styles.img}
+                id={item._id}
+              />
             </Link>
             <Link to={`/swetshirt/${item._id}`}>
               <h2 className={styles.title}>{item.name}</h2>

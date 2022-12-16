@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../components/header.module.css";
-import logo from "../icons/logo.png";
-import login from "../icons/login.png";
-import search from "../icons/search.png";
-import bascket from "../icons/bascet.png";
+import styles from "../styles.component/header.module.css";
+import logo from "../../resources/icons/logo.png";
+import login from "../../resources/icons/login.png";
+import search from "../../resources/icons/search.png";
+import bascket from "../../resources/icons/bascet.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
