@@ -5,13 +5,15 @@ import Footer from "./ui/footer";
 import config from "../config.json";
 import styles from "../components/styles.component/swetShirt.module.css";
 import axios from "axios";
+import httpService from "../services/http.services";
+import ReviewSweatshorts from "../layouts/reviewSweatshirts";
 
 const SwetShirt = () => {
   const [cat, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`${config.ApiEndPOint}` + ".json");
+      const { data } = await httpService.get(`${config.ApiEndPOint}` + ".json");
       const { category, product } = data;
       setCat(category);
       setCatalog(product);
