@@ -4,9 +4,7 @@ import Header from "./ui/header";
 import Footer from "./ui/footer";
 import config from "../config.json";
 import styles from "../components/styles.component/swetShirt.module.css";
-import axios from "axios";
 import httpService from "../services/http.services";
-import ReviewSweatshorts from "../layouts/reviewSweatshirts";
 
 const SwetShirt = () => {
   const [cat, setCat] = useState(null);
