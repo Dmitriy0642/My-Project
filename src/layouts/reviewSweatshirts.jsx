@@ -4,6 +4,7 @@ import config from "../config.json";
 import Header from "../components/ui/header";
 import Footer from "../components/ui/footer";
 import styles from "../components/styles.component/reviewSwetshirt.module.css";
+import AddedFormBascet from "../components/form/addedToBascet";
 
 const ReviewSweatshorts = ({ match }) => {
   const [cat, setCat] = useState(null);
@@ -55,58 +56,13 @@ const ReviewSweatshorts = ({ match }) => {
             className={styles.main_div}
           >
             <img src={item.img[0]} alt="" />
-            <div className={styles.secound_div}>
-              <h2 className={styles.main_title}>Параметры товара</h2>
-              <div className={styles.title_block}>
-                <h2>Имя Модели : {item.name}</h2>
-              </div>
-              <div className={styles.title_block}>
-                <h2>Фирма : {item.firm}</h2>
-              </div>
-              <div className={styles.title_block}>
-                <h2>Цена : {item.price}$</h2>
-              </div>
-              <h2 className={styles.title_sizes}>Размеры</h2>
-              <div className={styles.second_div_button}>
-                <button
-                  className={styles.button}
-                  onClick={(e) => {
-                    handleClick(e);
-                  }}
-                >
-                  {item.quantity[0].size}
-                </button>
-                <button
-                  className={styles.button}
-                  onClick={(e) => {
-                    handleClick(e);
-                  }}
-                >
-                  {item.quantity[1].size}
-                </button>
-              </div>
-              <div className={styles.third_div_button}>
-                <button
-                  className={styles.button}
-                  onClick={(e) => {
-                    handleClick(e);
-                  }}
-                >
-                  {item.quantity[2].size}
-                </button>
-                <button
-                  className={styles.button}
-                  onClick={(e) => {
-                    handleClick(e);
-                  }}
-                >
-                  {item.quantity[3].size}
-                </button>
-              </div>
-              <button className={styles.bascet_button}>
-                Добавить в корзину
-              </button>
-            </div>
+            <AddedFormBascet
+              quantity={item.quantity}
+              id={item._id}
+              price={item.price}
+              name={item.name}
+              firm={item.firm}
+            />
           </div>
         ))}
       </div>
