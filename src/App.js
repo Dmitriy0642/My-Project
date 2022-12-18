@@ -1,8 +1,8 @@
 import React from "react";
 import MainPage from "./layouts/mainPage";
 import { Route, Switch } from "react-router-dom";
-import SwetShirt from "./components/swetShirt";
-import ReviewSweatshorts from "./layouts/reviewSweatshirts";
+import SwetShirt from "./components/swetshirt/swetShirt";
+import ReviewSweatshorts from "./components/swetshirt/reviewSweatshirts";
 
 function App() {
   return (

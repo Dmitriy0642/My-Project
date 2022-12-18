@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Header from "./ui/header";
-import Footer from "./ui/footer";
-import config from "../config.json";
-import styles from "../components/styles.component/swetShirt.module.css";
-import httpService from "../services/http.services";
+import Header from "../ui/header";
+import Footer from "../ui/footer";
+import config from "../../config.json";
+import styles from "../styles.component/swetShirt.module.css";
+import httpService from "../../services/http.services";
+import getDataWithCategory from "../../services/data.transform";
 
 const SwetShirt = () => {
   const [cat, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
+
   useEffect(() => {
     const getData = async () => {
       const { data } = await httpService.get(`${config.ApiEndPOint}` + ".json");
@@ -18,34 +20,18 @@ const SwetShirt = () => {
     };
     getData();
   }, []);
-  const categoryArr = [];
-  for (const key in cat) {
-    categoryArr.push(cat[key]);
-  }
-  const catalogArr = [];
-  for (const key in catalog) {
-    catalogArr.push(catalog[key]);
-  }
 
-  const res = catalogArr.filter((catArr) => {
-    const cat = categoryArr.find((obj) => obj._id === catArr.category);
-    if (cat !== undefined) {
-      const cat_name = cat.name;
-      if (cat_name === "sweatshirt") return catalogArr;
-    }
-  });
+  const filtredDataContent = getDataWithCategory(cat, catalog, "boots");
 
-  const handleClick = (event) => {
-    const id = event.target.id;
-  };
+  const handleClick = (e) => {};
 
-  return cat === null && catalog === null ? (
+  return filtredDataContent === null && filtredDataContent === undefined ? (
     <h2>Loading</h2>
   ) : (
     <div>
       <Header />
       <div className={styles.second_block}>
-        {res.map((item) => (
+        {filtredDataContent.map((item) => (
           <div
             key={item._id}
             category={item.category}
