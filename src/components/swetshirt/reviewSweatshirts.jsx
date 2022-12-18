@@ -6,6 +6,8 @@ import Footer from "../ui/footer";
 import styles from "../styles.component/reviewSwetshirt.module.css";
 import AddedFormBascet from "../form/addedToBascet";
 
+import getDataWithCategory from "../../services/data.transform";
+
 const ReviewSweatshorts = ({ match }) => {
   const [cat, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
@@ -20,27 +22,12 @@ const ReviewSweatshorts = ({ match }) => {
     getData();
   }, []);
 
-  const categoryArr = [];
-  for (const key in cat) {
-    categoryArr.push(cat[key]);
-  }
-  const catalogArr = [];
-  for (const key in catalog) {
-    catalogArr.push(catalog[key]);
-  }
-
-  const res = catalogArr.filter((catArr) => {
-    const cat = categoryArr.find((obj) => obj._id === catArr.category);
-    if (cat !== undefined) {
-      const cat_name = cat.name;
-      if (cat_name === "sweatshirt") return catalogArr;
-    }
-  });
-  const l = res.find((obj) => obj._id === postId);
+  const filtredDataContent = getDataWithCategory(cat, catalog, "sweatshirt");
+  const getSingleData = filtredDataContent.find((obj) => obj._id === postId);
   const readyData = [];
-  readyData.push(l);
+  readyData.push(getSingleData);
 
-  return l === undefined ? (
+  return getSingleData === undefined ? (
     <h2>Loading</h2>
   ) : (
     <div>

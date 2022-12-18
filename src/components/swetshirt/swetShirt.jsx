@@ -8,7 +8,7 @@ import httpService from "../../services/http.services";
 import getDataWithCategory from "../../services/data.transform";
 
 const SwetShirt = () => {
-  const [cat, setCat] = useState(null);
+  const [categoryProd, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
 
   useEffect(() => {
@@ -21,12 +21,16 @@ const SwetShirt = () => {
     getData();
   }, []);
 
-  const filtredDataContent = getDataWithCategory(cat, catalog, "boots");
+  const filtredDataContent = getDataWithCategory(
+    categoryProd,
+    catalog,
+    "sweatshirt"
+  );
 
   const handleClick = (e) => {};
 
-  return filtredDataContent === null && filtredDataContent === undefined ? (
-    <h2>Loading</h2>
+  return filtredDataContent === [] ? (
+    <h2>Loading...</h2>
   ) : (
     <div>
       <Header />
