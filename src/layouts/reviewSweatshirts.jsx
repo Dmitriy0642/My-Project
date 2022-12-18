@@ -38,6 +38,10 @@ const ReviewSweatshorts = ({ match }) => {
   const readyData = [];
   readyData.push(l);
 
+  const handleClick = (event) => {
+    console.log(event.target);
+  };
+
   return l === undefined ? (
     <h2>Loading</h2>
   ) : (
@@ -52,33 +56,56 @@ const ReviewSweatshorts = ({ match }) => {
           >
             <img src={item.img[0]} alt="" />
             <div className={styles.secound_div}>
+              <h2 className={styles.main_title}>Параметры товара</h2>
               <div className={styles.title_block}>
-                <h2>Имя Товара : {item.name}</h2>
+                <h2>Имя Модели : {item.name}</h2>
               </div>
               <div className={styles.title_block}>
-                <h2>Фирма Товара : {item.firm}</h2>
+                <h2>Фирма : {item.firm}</h2>
               </div>
               <div className={styles.title_block}>
-                <h2>Цена товара : {item.price}$</h2>
+                <h2>Цена : {item.price}$</h2>
               </div>
-              <h2 className={styles.title_sizes}>Размеры в наличии</h2>
+              <h2 className={styles.title_sizes}>Размеры</h2>
               <div className={styles.second_div_button}>
-                <button className={styles.button}>
+                <button
+                  className={styles.button}
+                  onClick={(e) => {
+                    handleClick(e);
+                  }}
+                >
                   {item.quantity[0].size}
                 </button>
-                <button className={styles.button}>
+                <button
+                  className={styles.button}
+                  onClick={(e) => {
+                    handleClick(e);
+                  }}
+                >
                   {item.quantity[1].size}
                 </button>
               </div>
               <div className={styles.third_div_button}>
-                <button className={styles.button}>
+                <button
+                  className={styles.button}
+                  onClick={(e) => {
+                    handleClick(e);
+                  }}
+                >
                   {item.quantity[2].size}
                 </button>
-                <button className={styles.button}>
+                <button
+                  className={styles.button}
+                  onClick={(e) => {
+                    handleClick(e);
+                  }}
+                >
                   {item.quantity[3].size}
                 </button>
               </div>
-              {/* <button>Добавить в корзину</button> */}
+              <button className={styles.bascet_button}>
+                Добавить в корзину
+              </button>
             </div>
           </div>
         ))}

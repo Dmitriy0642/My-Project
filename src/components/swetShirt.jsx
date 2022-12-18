@@ -37,7 +37,6 @@ const SwetShirt = () => {
 
   const handleClick = (event) => {
     const id = event.target.id;
-    console.log(id);
   };
 
   return cat === null && catalog === null ? (
