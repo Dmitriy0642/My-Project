@@ -13,7 +13,7 @@ const SwetShirt = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await httpService.get(`${config.ApiEndPOint}` + ".json");
+      const { data } = await httpService.get(`${config.ApiEndPOint}` + `.json`);
       const { category, product } = data;
       setCat(category);
       setCatalog(product);
