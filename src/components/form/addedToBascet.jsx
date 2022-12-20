@@ -6,7 +6,9 @@ const AddedFormBascet = (props) => {
     console.log("click");
   };
 
-  return (
+  return props.quantity === undefined ? (
+    <h2>Loading</h2>
+  ) : (
     <>
       <div className={styles.main_div}>
         <h2 className={styles.main_title}>Параметры товара</h2>

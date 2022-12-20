@@ -7,11 +7,15 @@ import Hoodies from "./components/hoodies/hoodies";
 import HoodiesReview from "./components/hoodies/hoodiesReview";
 import Sneakers from "./components/sneakers/sneakers";
 import SneakersReview from "./components/sneakers/sneakersReview";
+import Socks from "./components/socks/socks";
+import SocksReview from "./components/socks/socksReview";
 
 function App() {
   return (
     <div>
       <Switch>
+        <Route path="/socks/:postId" component={SocksReview} />
+        <Route path="/socks" component={Socks} />
         <Route path="/shoes/:postId" component={SneakersReview} />
         <Route path="/shoes" component={Sneakers} />
         <Route path="/hoodies/:postId" component={HoodiesReview} />

@@ -3,7 +3,6 @@ import AddedFormBascet from "./addedToBascet";
 import styles from "../styles.component/reviewClothes.module.css";
 
 const ReviewClothes = ({ data }) => {
-  console.log(data);
   return data === undefined ? (
     <h2>Loading...</h2>
   ) : (
