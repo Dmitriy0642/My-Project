@@ -6,6 +6,7 @@ import config from "../../config.json";
 import styles from "../styles.component/swetShirt.module.css";
 import httpService from "../../services/http.services";
 import getDataWithCategory from "../../services/data.transform";
+import FormCatalog from "../form/reusableForm";
 
 const SwetShirt = () => {
   const [categoryProd, setCat] = useState(null);
@@ -27,8 +28,6 @@ const SwetShirt = () => {
     "sweatshirt"
   );
 
-  const handleClick = (e) => {};
-
   return filtredDataContent === [] ? (
     <h2>Loading...</h2>
   ) : (
@@ -41,9 +40,6 @@ const SwetShirt = () => {
             category={item.category}
             firm={item.firm}
             className={styles.main_div}
-            onClick={(e) => {
-              handleClick(e);
-            }}
           >
             <Link to={`/swetshirt/${item._id}`}>
               <img
