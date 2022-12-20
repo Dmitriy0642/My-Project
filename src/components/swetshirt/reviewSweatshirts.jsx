@@ -3,8 +3,7 @@ import httpService from "../../services/http.services";
 import config from "../../config.json";
 import Header from "../ui/header";
 import Footer from "../ui/footer";
-import styles from "../styles.component/reviewSwetshirt.module.css";
-import AddedFormBascet from "../form/addedToBascet";
+import ReviewClothes from "../form/reviewClothes";
 
 import getDataWithCategory from "../../services/data.transform";
 
@@ -27,29 +26,12 @@ const ReviewSweatshorts = ({ match }) => {
   const readyData = [];
   readyData.push(getSingleData);
 
-  return getSingleData === undefined ? (
+  return readyData === undefined ? (
     <h2>Loading</h2>
   ) : (
     <div>
       <Header />
-      <div>
-        {readyData.map((item) => (
-          <div
-            key={item._id}
-            category={item.category}
-            className={styles.main_div}
-          >
-            <img src={item.img[0]} alt="" />
-            <AddedFormBascet
-              quantity={item.quantity}
-              id={item._id}
-              price={item.price}
-              name={item.name}
-              firm={item.firm}
-            />
-          </div>
-        ))}
-      </div>
+      <ReviewClothes data={getSingleData} />
       <Footer />
     </div>
   );
