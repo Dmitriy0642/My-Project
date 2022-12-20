@@ -31,30 +31,9 @@ const SwetShirt = () => {
   return filtredDataContent === [] ? (
     <h2>Loading...</h2>
   ) : (
-    <div className={styles.wrapper}>
+    <div>
       <Header />
-      <div className={styles.second_block}>
-        {filtredDataContent.map((item) => (
-          <div
-            key={item._id}
-            category={item.category}
-            firm={item.firm}
-            className={styles.main_div}
-          >
-            <Link to={`/swetshirt/${item._id}`}>
-              <img
-                src={item.img[0]}
-                alt=""
-                className={styles.img}
-                id={item._id}
-              />
-            </Link>
-            <Link to={`/swetshirt/${item._id}`}>
-              <h2 className={styles.title}>{item.name}</h2>
-            </Link>
-          </div>
-        ))}
-      </div>
+      <FormCatalog data={filtredDataContent} />
       <Footer />
     </div>
   );
