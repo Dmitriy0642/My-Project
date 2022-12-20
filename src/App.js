@@ -9,11 +9,15 @@ import Sneakers from "./components/sneakers/sneakers";
 import SneakersReview from "./components/sneakers/sneakersReview";
 import Socks from "./components/socks/socks";
 import SocksReview from "./components/socks/socksReview";
+import Tshirt from "./components/t-shirt/tshirt";
+import TshirtReview from "./components/t-shirt/tshirtReview";
 
 function App() {
   return (
     <div>
       <Switch>
+        <Route path="/tshirts/:postId" component={TshirtReview} />
+        <Route path="/tshirts" component={Tshirt} />
         <Route path="/socks/:postId" component={SocksReview} />
         <Route path="/socks" component={Socks} />
         <Route path="/shoes/:postId" component={SneakersReview} />

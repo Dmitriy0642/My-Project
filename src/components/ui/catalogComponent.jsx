@@ -37,7 +37,7 @@ const CatalogComponent = () => {
           <h2 className={styles.title}>Socks</h2>
         </div>
         <div className={styles.block_tshorts}>
-          <Link to="/t-shirts">
+          <Link to="/tshirts">
             <img src={logoTshirt} alt="" className={styles.logo_img} />
           </Link>
           <h2 className={styles.title}>T-shirts</h2>

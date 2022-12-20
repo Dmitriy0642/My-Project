@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import Header from "../ui/header";
 import Footer from "../ui/footer";
 import config from "../../config.json";
@@ -7,7 +7,7 @@ import httpService from "../../services/http.services";
 import getDataWithCategory from "../../services/data.transform";
 import FormCatalog from "../form/reusableForm";
 
-const SwetShirt = () => {
+const Tshirt = () => {
   const [categoryProd, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
 
@@ -24,7 +24,7 @@ const SwetShirt = () => {
   const filtredDataContent = getDataWithCategory(
     categoryProd,
     catalog,
-    "sweatshirt"
+    "t-shirt"
   );
 
   return filtredDataContent === undefined ? (
@@ -32,10 +32,10 @@ const SwetShirt = () => {
   ) : (
     <div>
       <Header />
-      <FormCatalog data={filtredDataContent} url={"swetshirt"} />
+      <FormCatalog data={filtredDataContent} url={"tshirts"} />
       <Footer />
     </div>
   );
 };
 
-export default SwetShirt;
+export default Tshirt;
