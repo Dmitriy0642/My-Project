@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import Header from "../ui/header";
 import Footer from "../ui/footer";
 import config from "../../config.json";
