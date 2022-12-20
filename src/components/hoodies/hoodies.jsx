@@ -31,7 +31,7 @@ const Hoodies = () => {
   ) : (
     <div>
       <Header />
-      <FormCatalog data={filtredDataContent} />
+      <FormCatalog data={filtredDataContent} url={"hoodies"} />
       <Footer />
     </div>
   );

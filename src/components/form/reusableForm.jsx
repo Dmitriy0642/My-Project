@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles.component/reusableForm.module.css";
 import { Link } from "react-router-dom";
 
-const FormCatalog = ({ data }) => {
+const FormCatalog = ({ data, url }) => {
   return data === null ? (
     <h2>Loading...</h2>
   ) : (
@@ -14,7 +14,7 @@ const FormCatalog = ({ data }) => {
           firm={item.firm}
           className={styles.main_div}
         >
-          <Link to={`/hoodies/${item._id}`}>
+          <Link to={`/${url}/${item._id}`}>
             <img
               src={item.img[0]}
               alt=""
@@ -22,7 +22,7 @@ const FormCatalog = ({ data }) => {
               id={item._id}
             />
           </Link>
-          <Link to={`/hoodies/${item._id}`}>
+          <Link to={`/${url}/${item._id}`}>
             <h2 className={styles.title}>{item.name}</h2>
           </Link>
         </div>
