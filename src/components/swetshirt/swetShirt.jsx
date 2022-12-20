@@ -32,7 +32,7 @@ const SwetShirt = () => {
   return filtredDataContent === [] ? (
     <h2>Loading...</h2>
   ) : (
-    <div>
+    <div className={styles.wrapper}>
       <Header />
       <div className={styles.second_block}>
         {filtredDataContent.map((item) => (

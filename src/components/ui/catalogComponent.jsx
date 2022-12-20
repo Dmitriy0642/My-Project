@@ -7,7 +7,8 @@ import logoSocks from "../../resources/LogoCatalog/LogoSocks.jpg";
 import logoTshirt from "../../resources/LogoCatalog/logoTshirt.jpg";
 import httpService from "../../services/http.services";
 import config from "../../config.json";
-import Shoes from "../shoes/componentShoes";
+import logoShoes from "../../resources/LogoCatalog/logoShoes.jpg";
+import getDataWithCategory from "../../services/data.transform";
 
 const CatalogComponent = () => {
   const [categoryProd, setCat] = useState(null);
@@ -23,7 +24,14 @@ const CatalogComponent = () => {
     getData();
   }, []);
 
-  return catalog === null && categoryProd === null ? (
+  const filtredDataContent = getDataWithCategory(
+    categoryProd,
+    catalog,
+    "boots"
+  );
+  console.log(filtredDataContent);
+
+  return filtredDataContent === [] ? (
     <h2>Loading...</h2>
   ) : (
     <div className={styles.main_div}>
@@ -34,8 +42,9 @@ const CatalogComponent = () => {
       <div className={styles.second_block}>
         <div className={styles.block_Sneakers}>
           <Link to="/shoes">
-            <Shoes className={styles.logo_img} />
+            <img src={logoShoes} alt="" className={styles.logo_img} />
           </Link>
+          <h2 className={styles.title}>Sneakers</h2>
         </div>
         <div className={styles.block_hoodies}>
           <Link to="/hoodies">
