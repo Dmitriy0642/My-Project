@@ -4,7 +4,6 @@ import config from "../../config.json";
 import Header from "../ui/header";
 import Footer from "../ui/footer";
 import ReviewClothes from "../form/reviewClothes";
-
 import getDataWithCategory from "../../services/data.transform";
 
 const ReviewSweatshorts = ({ match }) => {
@@ -23,10 +22,8 @@ const ReviewSweatshorts = ({ match }) => {
 
   const filtredDataContent = getDataWithCategory(cat, catalog, "sweatshirt");
   const getSingleData = filtredDataContent.find((obj) => obj._id === postId);
-  const readyData = [];
-  readyData.push(getSingleData);
 
-  return readyData === undefined ? (
+  return getSingleData === undefined ? (
     <h2>Loading</h2>
   ) : (
     <div>

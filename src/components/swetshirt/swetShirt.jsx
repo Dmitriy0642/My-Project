@@ -27,7 +27,7 @@ const SwetShirt = () => {
     "sweatshirt"
   );
 
-  return filtredDataContent === [] ? (
+  return filtredDataContent === undefined ? (
     <h2>Loading...</h2>
   ) : (
     <div>
