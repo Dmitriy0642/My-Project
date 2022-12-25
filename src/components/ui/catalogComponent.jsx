@@ -5,14 +5,13 @@ import styles from "../styles.component/catalog.module.css";
 import logoHoodies from "../../resources/LogoCatalog/logoHoodies.jpg";
 import logoSocks from "../../resources/LogoCatalog/LogoSocks.jpg";
 import logoTshirt from "../../resources/LogoCatalog/logoTshirt.jpg";
-
 import logoShoes from "../../resources/LogoCatalog/logoShoes.jpg";
 
 const CatalogComponent = () => {
   return (
     <div className={styles.main_div}>
       <Link to="/swetshirt">
-        <img src={logoSwetshirt} alt="" className={styles.logo_swetshirts} />
+        <img src={logoSwetshirt} alt="" />
       </Link>
       <h2 className={styles.title}>Stone Island Swetshirt</h2>
       <div className={styles.second_block}>

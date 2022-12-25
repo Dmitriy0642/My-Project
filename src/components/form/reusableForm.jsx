@@ -3,7 +3,7 @@ import styles from "../styles.component/reusableForm.module.css";
 import { Link } from "react-router-dom";
 
 const FormCatalog = ({ data, url }) => {
-  return data === null ? (
+  return data === null && data === undefined ? (
     <h2>Loading...</h2>
   ) : (
     <div className={styles.main_content}>

@@ -9,6 +9,7 @@ import FormCatalog from "../form/reusableForm";
 const Socks = () => {
   const [categoryProd, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
+  const [readyData, setReadyData] = useState(null);
 
   useEffect(() => {
     const getData = async () => {

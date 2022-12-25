@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import httpService from "../../services/http.services";
+import config from "../../config.json";
 import Header from "../ui/header";
 import Footer from "../ui/footer";
-import config from "../../config.json";
-import httpService from "../../services/http.services";
 import getDataWithCategory from "../../services/data.transform";
 import FormCatalog from "../form/reusableForm";
 
-const SwetShirt = () => {
+const SwetShirt = ({ props }) => {
+  const [readyData, setReadyData] = useState(null);
   const [categoryProd, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
 
@@ -27,7 +27,7 @@ const SwetShirt = () => {
     "sweatshirt"
   );
 
-  return filtredDataContent === undefined ? (
+  return filtredDataContent === null ? (
     <h2>Loading...</h2>
   ) : (
     <div>

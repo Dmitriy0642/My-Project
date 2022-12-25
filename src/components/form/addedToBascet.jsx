@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles.component/addedToBascet.module.css";
 
 const AddedFormBascet = (props) => {
+  console.log(props);
   const handleClick = () => {
     console.log("click");
   };
@@ -23,40 +24,13 @@ const AddedFormBascet = (props) => {
         </div>
         <h2 className={styles.title_sizes}>Размеры</h2>
         <div className={styles.second_div_button}>
-          <button
-            className={styles.button}
-            onClick={(e) => {
-              handleClick(e);
-            }}
-          >
-            {props.quantity[0].size}
-          </button>
-          <button
-            className={styles.button}
-            onClick={(e) => {
-              handleClick(e);
-            }}
-          >
-            {props.quantity[1].size}
-          </button>
-        </div>
-        <div className={styles.third_div_button}>
-          <button
-            className={styles.button}
-            onClick={(e) => {
-              handleClick(e);
-            }}
-          >
-            {props.quantity[2].size}
-          </button>
-          <button
-            className={styles.button}
-            onClick={(e) => {
-              handleClick(e);
-            }}
-          >
-            {props.quantity[3].size}
-          </button>
+          {props.quantity.map((item) => (
+            <div key={item.size}>
+              <button className={styles.button} onClick={handleClick}>
+                {item.size}
+              </button>
+            </div>
+          ))}
         </div>
         <button className={styles.bascet_button}>Добавить в корзину</button>
       </div>
