@@ -11,11 +11,13 @@ import Socks from "./components/socks/socks";
 import SocksReview from "./components/socks/socksReview";
 import Tshirt from "./components/t-shirt/tshirt";
 import TshirtReview from "./components/t-shirt/tshirtReview";
+import Bascket from "./layouts/bascet";
 
 function App() {
   return (
     <div>
       <Switch>
+        <Route path="/basket" component={Bascket} />
         <Route path="/tshirts/:postId" component={TshirtReview} />
         <Route path="/tshirts" component={Tshirt} />
         <Route path="/socks/:postId" component={SocksReview} />

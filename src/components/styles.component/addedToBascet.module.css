@@ -173,18 +173,18 @@ legend {
   height: 30px;
   width: 100px;
   cursor: pointer;
-  display: inline-block;
-  position: relative;
+  border-radius: 15px;
+  border: 2px solid #b18597;
 }
-
 .button.button {
   border-radius: 0.75em;
   border: 2px solid #b18597;
-  background-color: #fff0f0;
 }
+
 .button:active {
   background-color: pink;
-  transition: 0.2s;
+  border-radius: 0.75em;
+  border: 2px solid #b18597;
 }
 
 .bascet_button {
@@ -199,6 +199,5 @@ legend {
 }
 
 .bascet_button:active {
-  transition: 0.2s;
   background-color: pink;
 }

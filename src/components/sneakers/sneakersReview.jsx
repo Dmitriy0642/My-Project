@@ -5,9 +5,12 @@ import Header from "../ui/header";
 import Footer from "../ui/footer";
 import ReviewClothes from "../form/reviewClothes";
 import getDataWithCategory from "../../services/data.transform";
+import { useHistory } from "react-router-dom";
 
 const SneakersReview = ({ match }) => {
-  console.log(match);
+  const history = useHistory();
+  console.log(history);
+
   const [cat, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
   const postId = match.params.postId;
