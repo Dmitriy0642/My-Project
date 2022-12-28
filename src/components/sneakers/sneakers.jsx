@@ -25,6 +25,9 @@ const Sneakers = () => {
     catalog,
     "boots"
   );
+  if (categoryProd === null || catalog === null) {
+    return <h2>Loading</h2>;
+  }
 
   return filtredDataContent === [] ? (
     <h2>Loading...</h2>

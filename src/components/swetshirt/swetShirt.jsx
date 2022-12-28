@@ -26,6 +26,9 @@ const SwetShirt = ({ props }) => {
     catalog,
     "sweatshirt"
   );
+  if (categoryProd === null || catalog === null) {
+    return <h2>Loading</h2>;
+  }
 
   return filtredDataContent === null ? (
     <h2>Loading...</h2>
