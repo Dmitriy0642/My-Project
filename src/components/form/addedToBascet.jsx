@@ -1,14 +1,9 @@
-import React from "react";
-
+import React, { useState } from "react";
 import styles from "../styles.component/addedToBascet.module.css";
 
 const AddedFormBascet = (props) => {
-  const handleClick = (event) => {
-    console.log(event.target.innerText);
-  };
-
-  const handleAddToBascet = () => {
-    console.log();
+  const handleClick = (e) => {
+    console.log(e.target);
   };
 
   return props.quantity === undefined ? (
@@ -36,9 +31,7 @@ const AddedFormBascet = (props) => {
             </div>
           ))}
         </div>
-        <button className={styles.bascet_button} onClick={handleAddToBascet}>
-          Добавить в корзину
-        </button>
+        <button className={styles.bascet_button}>Добавить в корзину</button>
       </div>
     </>
   );

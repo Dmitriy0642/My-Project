@@ -181,10 +181,11 @@ legend {
   border: 2px solid #b18597;
 }
 
-.button:active {
+.button.active {
   background-color: pink;
   border-radius: 0.75em;
   border: 2px solid #b18597;
+  color: white;
 }
 
 .bascet_button {
