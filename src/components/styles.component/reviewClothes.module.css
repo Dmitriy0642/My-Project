@@ -128,3 +128,7 @@ legend {
   height: 700px;
   width: 600px;
 }
+
+.div_photos_change {
+  display: flex;
+}

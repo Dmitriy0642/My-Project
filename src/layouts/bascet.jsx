@@ -7,7 +7,7 @@ const Bascket = (props) => {
   return (
     <>
       <Header />
-
+      <div></div>
       <Footer />
     </>
   );

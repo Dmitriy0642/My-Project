@@ -7,7 +7,6 @@ import ReviewClothes from "../form/reviewClothes";
 import getDataWithCategory from "../../services/data.transform";
 
 const HoodiesReview = ({ match }) => {
-  console.log(match);
   const [cat, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);
   const postId = match.params.postId;
@@ -23,7 +22,7 @@ const HoodiesReview = ({ match }) => {
 
   const filtredDataContent = getDataWithCategory(cat, catalog, "hoodies");
   const getSingleData = filtredDataContent.find((obj) => obj._id === postId);
-  console.log(getSingleData);
+
   return getSingleData === undefined ? (
     <h2>Loading</h2>
   ) : (

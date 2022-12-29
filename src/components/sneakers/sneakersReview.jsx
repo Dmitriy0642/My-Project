@@ -26,7 +26,7 @@ const SneakersReview = ({ match }) => {
 
   const filtredDataContent = getDataWithCategory(cat, catalog, "boots");
   const getSingleData = filtredDataContent.find((obj) => obj._id === postId);
-  console.log(getSingleData);
+
   return getSingleData === undefined ? (
     <h2>Loading</h2>
   ) : (
