@@ -12,6 +12,7 @@ import SocksReview from "./components/socks/socksReview";
 import Tshirt from "./components/t-shirt/tshirt";
 import TshirtReview from "./components/t-shirt/tshirtReview";
 import Bascket from "./layouts/bascet";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/swetshirt" component={SwetShirt} />
         <Route path="/" component={MainPage} />
       </Switch>
+      <ToastContainer />
     </div>
   );
 }

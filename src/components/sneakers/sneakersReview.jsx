@@ -9,7 +9,6 @@ import { useHistory } from "react-router-dom";
 
 const SneakersReview = ({ match }) => {
   const history = useHistory();
-  console.log(history);
 
   const [cat, setCat] = useState(null);
   const [catalog, setCatalog] = useState(null);

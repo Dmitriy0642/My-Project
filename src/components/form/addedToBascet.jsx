@@ -1,9 +1,20 @@
 import React, { useState } from "react";
 import styles from "../styles.component/addedToBascet.module.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddedFormBascet = (props) => {
+  const [sizes, setSizes] = useState(null);
   const handleClick = (e) => {
-    console.log(e.target);
+    setSizes(e.target.innerText);
+  };
+
+  const handleAddBascet = () => {
+    if (sizes === null) {
+      toast("Вы не выбрали размер");
+    } else if (sizes === typeof string) {
+      toast("Товар добавлен в корзину");
+    }
   };
 
   return props.quantity === undefined ? (
@@ -25,13 +36,27 @@ const AddedFormBascet = (props) => {
         <div className={styles.second_div_button}>
           {props.quantity.map((item) => (
             <div key={item.size}>
-              <button className={styles.button} onClick={handleClick}>
+              <button
+                onClick={handleClick}
+                className={
+                  sizes !== `${item.size}`
+                    ? styles.button
+                    : styles.button_active
+                }
+              >
                 {item.size}
               </button>
             </div>
           ))}
         </div>
-        <button className={styles.bascet_button}>Добавить в корзину</button>
+        <button
+          className={
+            sizes === null ? styles.bascet_button_disable : styles.bascet_button
+          }
+          onClick={handleAddBascet}
+        >
+          Добавить в корзину
+        </button>
       </div>
     </>
   );

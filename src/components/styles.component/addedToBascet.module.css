@@ -181,11 +181,17 @@ legend {
   border: 2px solid #b18597;
 }
 
-.button.active {
+.button_active {
   background-color: pink;
   border-radius: 0.75em;
   border: 2px solid #b18597;
   color: white;
+  margin: 20px 30px 0 0;
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
 }
 
 .bascet_button {
@@ -201,4 +207,15 @@ legend {
 
 .bascet_button:active {
   background-color: pink;
+}
+
+.bascet_button_disable {
+  background-color: rgb(161, 159, 159);
+  color: white;
+  width: 180px;
+  height: 35px;
+  margin: 100px 0 0 155px;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  border: 2px solid rgb(75, 74, 74);
 }
