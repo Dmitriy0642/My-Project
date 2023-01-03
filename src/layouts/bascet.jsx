@@ -17,14 +17,30 @@ const Bascket = () => {
   return (
     <>
       <Header />
-      <div className={styles.main_div}>
-        <div>
-          {ar.map((item) => (
-            <div>
-              {<img src={item.img[0]} className={styles.title_img}></img>}
+      <div>
+        {ar.map((item) => (
+          <div key={item.id} className={styles.main_div}>
+            {<img src={item.img[0]} className={styles.title_img}></img>}
+            <div className={styles.second_block}>
+              <h2 className={styles.title_order}>Название товара</h2>
+              <div className={styles.under_block}>
+                <h2 className={styles.under_title_order}>{item.name}</h2>
+              </div>
             </div>
-          ))}
-        </div>
+            <div className={styles.third_block}>
+              <h2 className={styles.title_order}> Фирма товара</h2>
+              <div className={styles.under_block}>
+                <h2 className={styles.under_title_order}>{item.firm}</h2>
+              </div>
+            </div>
+            <div className={styles.fourth_block}>
+              <h2 className={styles.title_order}> Цена товара</h2>
+              <div className={styles.under_block}>
+                <h2 className={styles.under_title_order}>{item.price}$</h2>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       <Footer />
     </>

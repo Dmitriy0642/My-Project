@@ -121,34 +121,52 @@ label {
 legend {
   display: block;
 }
-
 .main_div {
   display: flex;
 }
-
-.div_menu_bascet {
-  display: flex;
-  margin: 30px 0 50px 225px;
-}
-
-.list_menu {
-  display: flex;
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-}
-
-.border_line {
-  margin: 17px 0 0 0;
-  width: auto;
-  height: 5px;
-  background-color: black;
-}
-
-.list_menu p {
-  margin: 0 80px 0 30px;
-}
-
 .title_img {
-  height: 50%;
-  width: 50%;
+  margin: 30px 0 20px 200px;
+  height: 420px;
+  width: 320px;
+  border: 1px solid gainsboro;
+}
+
+.title_order {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  margin: 10px 25px 0 25px;
+}
+
+.second_block {
+  margin: 30px 0 0 0;
+  border: 1px solid gray;
+  /* display: flex; */
+  height: 60px;
+}
+.under_title_order {
+  margin: 30px 0 0 10px;
+  font-size: 17px;
+
+  font-family: "Roboto", sans-serif;
+}
+.block {
+  border: 1px solid gray;
+  height: 50px;
+}
+
+.third_block {
+  margin: 30px 0 0 0;
+  border: 1px solid gray;
+  height: 60px;
+}
+
+.fourth_block {
+  margin: 30px 0 0 0;
+  border: 1px solid gray;
+  height: 60px;
+}
+.under_block {
+  margin: 10px 0 0 0;
+  text-align: center;
+  justify-content: center;
 }
