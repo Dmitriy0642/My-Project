@@ -23,6 +23,7 @@ const AddedFormBascet = (props) => {
       price: `${props.price}`,
       img: [props.img[0], props.img[1]],
     };
+
     localStorage.setItem(`${props.id}`, JSON.stringify(finishOrder));
   };
 

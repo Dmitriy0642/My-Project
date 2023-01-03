@@ -26,17 +26,35 @@ const Bascket = () => {
               <div className={styles.under_block}>
                 <h2 className={styles.under_title_order}>{item.name}</h2>
               </div>
+              <div className={styles.secound_under_block}>
+                <button className={styles.button_sizes}>XL</button>
+              </div>
             </div>
-            <div className={styles.third_block}>
-              <h2 className={styles.title_order}> Фирма товара</h2>
+            <div className={styles.second_block}>
+              <h2 className={styles.title_order}>Название фирмы</h2>
               <div className={styles.under_block}>
                 <h2 className={styles.under_title_order}>{item.firm}</h2>
               </div>
+              <div className={styles.secound_under_block}>
+                <button className={styles.button_sizes}>XL</button>
+              </div>
             </div>
-            <div className={styles.fourth_block}>
-              <h2 className={styles.title_order}> Цена товара</h2>
+            <div className={styles.second_block}>
+              <h2 className={styles.title_order}>Цена товара</h2>
               <div className={styles.under_block}>
                 <h2 className={styles.under_title_order}>{item.price}$</h2>
+              </div>
+              <div className={styles.secound_under_block}>
+                <button className={styles.button_sizes}>XL</button>
+              </div>
+            </div>
+            <div className={styles.second_block}>
+              <h2 className={styles.title_order}>Выбранный размер</h2>
+              <div className={styles.under_block}>
+                <h2 className={styles.under_title_order}>{item.size}</h2>
+              </div>
+              <div className={styles.secound_under_block}>
+                <button className={styles.button_sizes}>XL</button>
               </div>
             </div>
           </div>
