@@ -14,6 +14,7 @@ const ReviewClothes = ({ data }) => {
         <img src={data.img[0]} alt="" />
         <div></div>
         <AddedFormBascet
+          img={data.img}
           quantity={data.quantity}
           id={data._id}
           price={data.price}

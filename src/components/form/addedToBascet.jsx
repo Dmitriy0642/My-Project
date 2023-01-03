@@ -5,24 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const AddedFormBascet = (props) => {
   const [sizes, setSizes] = useState(null);
-  const [finishOrder, setFinishOrder] = useState({
-    name: `${props.name}`,
-    id: `${props.id}`,
-    price: `${props.price}`,
-    firm: `${props.firm}`,
-  });
-
   const handleClick = (e) => {
     setSizes(e.target.innerText);
-    const FOrder = {
-      name: `${props.name}`,
-      id: `${props.id}`,
-      price: `${props.price}`,
-      firm: `${props.firm}`,
-      quantity: [{ size: `${e.target.innerText}` }],
-    };
-    console.log(FOrder);
-    localStorage.setItem("finishOrder", JSON.stringify(FOrder));
   };
 
   const handleAddBascet = () => {
@@ -31,6 +15,15 @@ const AddedFormBascet = (props) => {
     } else if (sizes !== Number) {
       toast("Товар добавлен в корзину");
     }
+    const finishOrder = {
+      name: `${props.name}`,
+      size: sizes,
+      id: `${props.id}`,
+      firm: `${props.firm}`,
+      price: `${props.price}`,
+      img: [props.img[0], props.img[1]],
+    };
+    localStorage.setItem(`${props.id}`, JSON.stringify(finishOrder));
   };
 
   return props.quantity === undefined ? (

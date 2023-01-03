@@ -121,3 +121,34 @@ label {
 legend {
   display: block;
 }
+
+.main_div {
+  display: flex;
+}
+
+.div_menu_bascet {
+  display: flex;
+  margin: 30px 0 50px 225px;
+}
+
+.list_menu {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.border_line {
+  margin: 17px 0 0 0;
+  width: auto;
+  height: 5px;
+  background-color: black;
+}
+
+.list_menu p {
+  margin: 0 80px 0 30px;
+}
+
+.title_img {
+  height: 50%;
+  width: 50%;
+}
