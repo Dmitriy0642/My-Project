@@ -13,6 +13,7 @@ import Tshirt from "./components/t-shirt/tshirt";
 import TshirtReview from "./components/t-shirt/tshirtReview";
 import Bascket from "./layouts/bascet";
 import { ToastContainer } from "react-toastify";
+import UseQuantity from "./services/getAllQuantity";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" component={MainPage} />
       </Switch>
       <ToastContainer />
+      <UseQuantity />
     </div>
   );
 }
