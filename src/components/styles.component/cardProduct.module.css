@@ -122,34 +122,52 @@ legend {
   display: block;
 }
 
-.wrapper {
-  margin: 40px 200px 50px 170px;
+.main_div {
+  margin: 25px 0 0 160px;
   font-family: "Roboto", sans-serif;
-}
-.title_text {
   display: flex;
-  font-size: 30px;
+}
+
+.div_with_img {
+  width: 15%;
+  height: 15%;
+  border: 1px solid gray;
+}
+
+.counter {
+  display: inline-flex;
   align-items: center;
+  user-select: none;
+  margin: 0 0 0 210px;
+}
+.block_counter {
+  display: flex;
+  align-items: center;
+}
+
+.counter_increment {
+  flex: 0 0 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
   justify-content: center;
-}
-.header {
-  background-color: rgb(240, 239, 239);
+  align-items: center;
   display: flex;
-  height: 80px;
-  margin: 40px 0 0 50px;
-  font-size: 23px;
-  border-radius: 3px;
 }
 
-.header_nav_bar {
-  margin: 25px 100px 0 150px;
+.counter_decrement {
+  flex: 0 0 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
-.footer {
-  background-color: rgb(240, 239, 239);
-  display: flex;
-  height: 80px;
-  margin: 40px 0 0 50px;
-  font-size: 23px;
-  border-radius: 3px;
+.counter_input {
+  width: 30px;
+  text-align: center;
+  background-color: white;
+  border: none;
 }
