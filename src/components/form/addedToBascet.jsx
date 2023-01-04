@@ -4,11 +4,12 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddedFormBascet = (props) => {
+  // console.log(props);
   const [sizes, setSizes] = useState(null);
   const handleClick = (e) => {
     setSizes(e.target.innerText);
   };
-  console.log(sizes);
+
   const handleAddBascet = () => {
     if (sizes === null) {
       toast("Вы не выбрали размер");
@@ -21,7 +22,9 @@ const AddedFormBascet = (props) => {
         firm: `${props.firm}`,
         price: `${props.price}`,
         img: [props.img[0], props.img[1]],
+        quantity: props.quantity,
       };
+      console.log(finishOrder);
       localStorage.setItem(`${props.id}`, JSON.stringify(finishOrder));
     }
   };
