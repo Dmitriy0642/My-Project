@@ -123,7 +123,7 @@ legend {
 }
 
 .main_div {
-  margin: 25px 0 0 160px;
+  margin: 25px 0 0 300px;
   font-family: "Roboto", sans-serif;
   display: flex;
 }
@@ -135,39 +135,55 @@ legend {
 }
 
 .counter {
-  display: inline-flex;
+  margin: 20px 0 0 210px;
+  width: 100px;
   align-items: center;
+}
+
+.under_counter {
+  display: flex;
+  flex: 0 0 30px;
+  column-gap: 7px;
+}
+
+.increment {
+  margin: 5px 0 5px 0;
   user-select: none;
-  margin: 0 0 0 210px;
-}
-.block_counter {
-  display: flex;
-  align-items: center;
-}
-
-.counter_increment {
   flex: 0 0 30px;
   height: 30px;
-  border: 1px solid black;
   border-radius: 50%;
-  justify-content: center;
-  align-items: center;
   display: flex;
+  border: 1px solid black;
+  align-items: center;
+  justify-content: center;
 }
 
-.counter_decrement {
+.decrement {
+  margin: 5px 0 5px 0;
+  user-select: none;
   flex: 0 0 30px;
   height: 30px;
-  border: 1px solid black;
   border-radius: 50%;
-  justify-content: center;
+  display: flex;
+  border: 1px solid black;
   align-items: center;
+  justify-content: center;
+}
+.div_with_input {
   display: flex;
 }
-
-.counter_input {
-  width: 30px;
-  text-align: center;
-  background-color: white;
+.input_sizes {
   border: none;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.div_sizes {
+  margin: 10px 0 0 7px;
+}
+
+.under_div {
+  display: flex;
+  margin: 15px 0 24px 0;
 }

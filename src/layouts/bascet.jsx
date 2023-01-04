@@ -1,7 +1,9 @@
 import React from "react";
 import Header from "../components/ui/header";
 import Footer from "../components/ui/footer";
-import ReviewBascet from "../components/form/cardBascet";
+import HeaderBascet from "../components/ui/headerBascet";
+import CardProduct from "../components/form/cardProduct";
+import FooterBascet from "../components/ui/footerBascet";
 const Bascket = () => {
   const ar = [];
   const getData = () => {
@@ -17,10 +19,12 @@ const Bascket = () => {
     <>
       <Header />
       <div>
+        <HeaderBascet />
         {ar.map((item) => (
-          <ReviewBascet data={item} quantity={item.quantity[0]} key={item.id} />
+          <CardProduct data={item} quantity={item.quantity[0]} key={item.id} />
         ))}
       </div>
+      <FooterBascet />
       <Footer />
     </>
   );
