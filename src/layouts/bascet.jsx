@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../components/ui/header";
 import Footer from "../components/ui/footer";
 import styles from "../components/styles.component/bascet.module.css";
@@ -27,7 +27,7 @@ const Bascket = () => {
                 <h2 className={styles.under_title_order}>{item.name}</h2>
               </div>
               <div className={styles.secound_under_block}>
-                <button className={styles.button_sizes}>XL</button>
+                <button className={styles.button_sizes}></button>
               </div>
             </div>
             <div className={styles.second_block}>

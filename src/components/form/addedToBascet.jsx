@@ -14,17 +14,18 @@ const AddedFormBascet = (props) => {
       toast("Вы не выбрали размер");
     } else if (sizes !== Number) {
       toast("Товар добавлен в корзину");
-    }
-    const finishOrder = {
-      name: `${props.name}`,
-      size: sizes,
-      id: `${props.id}`,
-      firm: `${props.firm}`,
-      price: `${props.price}`,
-      img: [props.img[0], props.img[1]],
-    };
+      const finishOrder = {
+        name: `${props.name}`,
+        size: sizes,
+        id: `${props.id}`,
+        firm: `${props.firm}`,
+        price: `${props.price}`,
+        img: [props.img[0], props.img[1]],
+        quantity: [props.quantity],
+      };
 
-    localStorage.setItem(`${props.id}`, JSON.stringify(finishOrder));
+      localStorage.setItem(`${props.id}`, JSON.stringify(finishOrder));
+    }
   };
 
   return props.quantity === undefined ? (
