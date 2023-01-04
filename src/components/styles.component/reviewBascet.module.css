@@ -121,67 +121,26 @@ label {
 legend {
   display: block;
 }
-.main_div {
+
+.wrapper {
+  margin: 40px 200px 50px 170px;
+  font-family: "Roboto", sans-serif;
+}
+.title_text {
   display: flex;
-}
-.title_img {
-  margin: 30px 0 20px 200px;
-  height: 420px;
-  width: 320px;
-  border: 1px solid gainsboro;
-}
-
-.title_order {
-  font-family: "Roboto", sans-serif;
-  font-size: 25px;
-  margin: 10px 25px 0 25px;
-}
-
-.second_block {
-  margin: 30px 0 0 0;
-
-  height: 60px;
-}
-.under_title_order {
-  margin: 30px 0 0 10px;
-  font-size: 16px;
-
-  font-family: "Roboto", sans-serif;
-}
-.block {
-  height: 50px;
-}
-
-.third_block {
-  margin: 30px 0 0 0;
-
-  height: 60px;
-}
-
-.fourth_block {
-  margin: 30px 0 0 0;
-
-  height: 60px;
-}
-.under_block {
-  margin: 10px 0 0 0;
-  text-align: center;
+  font-size: 30px;
+  align-items: center;
   justify-content: center;
 }
-
-.secound_under_block {
-  margin: 80px 0 0 0;
+.header {
+  background-color: rgb(240, 239, 239);
   display: flex;
-  text-align: center;
-  justify-content: center;
+  height: 80px;
+  margin: 40px 0 0 50px;
+  font-size: 23px;
+  border-radius: 3px;
 }
 
-.button_sizes {
-  background-color: rgb(160, 159, 159);
-  width: 100px;
-  height: 30px;
-  border-radius: 30px;
-  border: 2px solid rgb(143, 143, 143);
-  color: white;
-  font-family: "Roboto", sans-serif;
+.header_nav_bar {
+  margin: 25px 100px 0 150px;
 }
