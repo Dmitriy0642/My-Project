@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles.component/cardProduct.module.css";
 
 const CardProduct = ({ data, quantity }) => {
+  const [inBascet, setInBascet] = useState([
+    { id: `${data.id}`, price: `${data.price}`, size: `${data.size}` },
+  ]);
+  console.log();
+  const handleIncrement = (e) => {
+    const target = e.target.id;
+  };
+
   return (
     <div className={styles.main_div}>
       <div className={styles.div_with_img}>
@@ -10,12 +18,19 @@ const CardProduct = ({ data, quantity }) => {
       <div className={styles.counter}>
         {quantity.map((item) => (
           <div className={styles.under_counter} key={item.size}>
-            <div className={styles.increment}>+</div>
+            <div
+              className={styles.increment}
+              onClick={handleIncrement}
+              id={data.id}
+              idsize={item.size}
+            >
+              +
+            </div>
             <div className={styles.div_with_input}>
               <input
                 type="text"
                 disabled
-                value={0}
+                value={1}
                 className={styles.input_sizes}
               />
             </div>
@@ -30,6 +45,7 @@ const CardProduct = ({ data, quantity }) => {
           </div>
         ))}
       </div>
+      <div className={styles.line}></div>
     </div>
   );
 };

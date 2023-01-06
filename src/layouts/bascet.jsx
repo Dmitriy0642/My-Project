@@ -14,7 +14,6 @@ const Bascket = () => {
     }
   };
   getData();
-
   return (
     <>
       <Header />
