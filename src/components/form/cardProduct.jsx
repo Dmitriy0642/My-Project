@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles.component/cardProduct.module.css";
 import Counter from "./counter";
 
 const CardProduct = ({ data, quantity }) => {
+  console.log(data.price);
   return (
     <div className={styles.main_div}>
       <div className={styles.div_with_img}>
@@ -12,9 +13,9 @@ const CardProduct = ({ data, quantity }) => {
         {quantity.map((item) => (
           <Counter
             size={item.size}
-            value={item.value}
             initialSize={data.size}
             key={item.size}
+            price={data.price}
           />
         ))}
       </div>

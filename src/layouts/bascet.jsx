@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/ui/header";
 import Footer from "../components/ui/footer";
 import HeaderBascet from "../components/ui/headerBascet";
 import CardProduct from "../components/form/cardProduct";
 import FooterBascet from "../components/ui/footerBascet";
 const Bascket = () => {
+  const [quan, setQuan] = useState();
   const ar = [];
   const getData = () => {
     for (let i = 0; i < localStorage.length; i++) {
@@ -13,7 +14,9 @@ const Bascket = () => {
       ar.push(getAr);
     }
   };
+
   getData();
+
   return (
     <>
       <Header />

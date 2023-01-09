@@ -1,25 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../styles.component/cardProduct.module.css";
-const Counter = ({ size, value, initialSize }) => {
-  const [data, setData] = [{ size: `${size}`, value: 0 }];
-  const handleIncrement = () => {};
+
+const Counter = ({ size, initialSize, price }) => {
+  const initialCounters = [
+    {
+      size: `${size}`,
+      value: initialSize === size ? 1 : 0,
+      price: price,
+    },
+  ];
+  const [data, setData] = useState(initialCounters);
+  const handleIncrement = (id) => {
+    const updateObj = data.map((el) =>
+      el.size === id ? { ...el, value: el.value + 1, price } : el
+    );
+    setData(updateObj);
+  };
+  const handleDecrement = (id) => {
+    const updateObj = data.map((el) =>
+      el.size === id ? { ...el, value: el.value - 1, price } : el
+    );
+    setData(updateObj);
+  };
   return (
-    <div className={styles.under_counter}>
-      <div className={styles.increment} id={size} onClick={handleIncrement}>
-        +
-      </div>
-      <div className={styles.div_with_input}>
-        <input
-          type="text"
-          disabled
-          value={data.value}
-          className={styles.input_sizes}
-        />
-      </div>
-      <div className={styles.decrement} id={size}>
-        -
-      </div>
-    </div>
+    <>
+      {data.map((el) => (
+        <div className={styles.under_counter} key={el.size}>
+          <div
+            className={styles.increment}
+            id={el.size}
+            onClick={() => handleIncrement(el.size)}
+          >
+            +
+          </div>
+          <div className={styles.div_with_input}>
+            <h2 id={el.size} className={styles.title_sizes}>
+              {el.value}
+            </h2>
+          </div>
+          <div
+            className={styles.decrement}
+            id={el.size}
+            onClick={() => handleDecrement(el.size)}
+          >
+            -
+          </div>
+          <div>
+            <h2 className={styles.block_title_sizes}>{size}</h2>
+          </div>
+        </div>
+      ))}
+    </>
   );
 };
 
