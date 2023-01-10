@@ -123,106 +123,35 @@ legend {
 }
 
 .main_div {
-  margin: 25px 0 25px 300px;
   font-family: "Roboto", sans-serif;
   display: flex;
 }
-
-.div_with_img {
-  width: 15%;
+.img_div {
   height: 15%;
-  border: 1px solid gray;
+  width: 15%;
 }
 
 .counter {
-  margin: 40px 0 0 210px;
-  width: 100px;
-  align-items: center;
+  margin: 0 0 0 200px;
 }
 
 .under_counter {
-  display: flex;
-  flex: 0 0 30px;
-  column-gap: 7px;
-}
-
-.increment {
-  margin: 5px 0 5px 0;
   user-select: none;
-  flex: 0 0 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  border: 1px solid black;
-  align-items: center;
-  justify-content: center;
-}
-
-.decrement {
-  margin: 5px 0 5px 0;
-  user-select: none;
-  flex: 0 0 30px;
-  height: 30px;
-  border-radius: 50%;
-  display: flex;
-  border: 1px solid black;
-  align-items: center;
-  justify-content: center;
-}
-.div_with_input {
+  width: 60px;
   display: flex;
 }
-.input_sizes {
-  border: none;
-  background-color: white;
-  width: 100%;
-  text-align: center;
-}
 
-.div_sizes {
-  margin: 30px 0 0 7px;
-}
-
-.under_div {
-  display: flex;
-  margin: 15px 0 24px 0;
-}
-
-.title_sizes {
-  margin: 10px 0 0 0;
-}
-
-.block_title_sizes {
-  margin: 7px 0 0 0;
-  width: 100px;
-  height: 25px;
-}
-
-.block_button {
-  margin: 95px 0 0 65px;
-}
-
-.button_delete_product {
-  width: 120px;
-  border: 1px solid black;
-  border-radius: 15px;
-  height: 28px;
-  background-color: rgb(197, 197, 197);
-  color: white;
-}
-
-.prices_block {
-  margin: 85px 0 0 260px;
-  width: 100px;
-  height: 50px;
-  background-color: black;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.price_text {
+.button_inc {
   font-size: 20px;
-  color: white;
+  display: flex;
+  border: 1px solid gainsboro;
+  margin: 25px 5px 0 0;
+  border-radius: 50%;
+  background-color: white;
+  flex: 0 0 0 30px;
+}
+
+.button_dec {
+  font-size: 20px;
+  margin: 25px 0px 0 5px;
 }
