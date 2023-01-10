@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import Header from "../components/ui/header";
 import Footer from "../components/ui/footer";
 import HeaderBascet from "../components/ui/headerBascet";
-import CardProduct from "../components/form/cardProduct";
+import CatalogInBascet from "../components/ui/catalogInBascet";
 import FooterBascet from "../components/ui/footerBascet";
-import styles from "../components/styles.component/bascet.module.css";
+
 const Bascket = () => {
-  const ar = [];
+  const dataWithLs = [];
   const getData = () => {
     for (let i = 0; i < localStorage.length; i++) {
       const getIt = localStorage.getItem(localStorage.key(i));
       const getAr = JSON.parse(getIt);
-      ar.push(getAr);
+      dataWithLs.push(getAr);
     }
   };
   getData();
@@ -19,14 +19,17 @@ const Bascket = () => {
   return (
     <>
       <Header />
-      <div>
-        <HeaderBascet />
-        <div className={styles.line}></div>
-        {ar.map((item) => (
-          <CardProduct data={item} quantity={item.quantity[0]} key={item.id} />
-        ))}
-        <div className={styles.line}></div>
-      </div>
+      <HeaderBascet />
+      {dataWithLs.forEach((item) => {
+        <CatalogInBascet
+          name={item.name}
+          initialSize={item.size}
+          price={item.price}
+          img={item.img[0]}
+          id={item.id}
+          quantity={item.quantity[0]}
+        />;
+      })}
       <FooterBascet />
       <Footer />
     </>
