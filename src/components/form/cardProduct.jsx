@@ -3,7 +3,10 @@ import styles from "../styles.component/cardProduct.module.css";
 import Counter from "./counter";
 
 const CardProduct = ({ data, quantity }) => {
-  console.log(data.price);
+  const handleClick = () => {
+    localStorage.removeItem(`${data.id}`);
+  };
+
   return (
     <div className={styles.main_div}>
       <div className={styles.div_with_img}>
@@ -12,12 +15,21 @@ const CardProduct = ({ data, quantity }) => {
       <div className={styles.counter}>
         {quantity.map((item) => (
           <Counter
+            name={data.name}
             size={item.size}
             initialSize={data.size}
             key={item.size}
             price={data.price}
           />
         ))}
+      </div>
+      <div className={styles.block_button}>
+        <button className={styles.button_delete_product} onClick={handleClick}>
+          Удалить товар
+        </button>
+      </div>
+      <div>
+        <h2 size={data}>{data.price}$</h2>
       </div>
     </div>
   );

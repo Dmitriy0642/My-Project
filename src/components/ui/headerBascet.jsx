@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles.component/headerBascet.module.css";
-import CardProduct from "../form/cardProduct";
+
 const HeaderBascet = ({ data, quantity }) => {
   return (
     <div className={styles.wrapper}>

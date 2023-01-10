@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import styles from "../styles.component/cardProduct.module.css";
 
-const Counter = ({ size, initialSize, price }) => {
+const Counter = ({ size, initialSize, price, name }) => {
   const initialCounters = [
     {
       size: `${size}`,
-      value: initialSize === size ? 1 : 0,
+      value: initialSize === `${size}` ? 1 : 0,
       price: price,
+      name: name,
     },
   ];
   const [data, setData] = useState(initialCounters);
+
   const handleIncrement = (id) => {
     const updateObj = data.map((el) =>
       el.size === id ? { ...el, value: el.value + 1, price } : el
     );
+    console.log(updateObj);
     setData(updateObj);
   };
   const handleDecrement = (id) => {
@@ -23,7 +26,7 @@ const Counter = ({ size, initialSize, price }) => {
     setData(updateObj);
   };
   return (
-    <>
+    <div>
       {data.map((el) => (
         <div className={styles.under_counter} key={el.size}>
           <div
@@ -50,7 +53,7 @@ const Counter = ({ size, initialSize, price }) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
